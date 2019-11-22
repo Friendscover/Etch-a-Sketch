@@ -1,13 +1,12 @@
 .square {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
     background-color: red;
-    border: 1px solid;
-    border-color: black;
+    margin-bottom: 0px;
 }
 
 .container {
-    width: 256px;
-    height: 256px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    max-width: 960px;
+    max-height: 960px;
 }
