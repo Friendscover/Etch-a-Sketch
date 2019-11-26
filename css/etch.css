@@ -10,3 +10,15 @@
     max-width: 960px;
     max-height: 960px;
 }
+
+#btnreset, #btncreate {
+    border-radius: 10px;
+    border-color: black;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
