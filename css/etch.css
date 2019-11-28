@@ -1,21 +1,21 @@
 .square {
-    background-color: red;
     margin-bottom: 0px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 100px;
+    margin-left: 200px;
     max-width: 960px;
     max-height: 960px;
 }
 
-#btnreset, #btncreate {
+#btnreset, #btncreate, #btnrgb{
     border-radius: 10px;
     border-color: black;
     margin-bottom: 50px;
     margin-top: 50px;
+    margin-right: 20px;
 }
 
 .button {

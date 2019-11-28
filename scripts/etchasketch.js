@@ -5,6 +5,7 @@ function createGrid()
     if (gridSize >= 1 && gridSize <= 64)
     {
         const container = document.querySelector('.container');    
+        container.style.border = "black solid";
         const square = document.createElement('div');
         square.classList.add("square");
         //creating the Grid by calculating the Divs Height and Width from the User's Requested Amount of Divs
@@ -32,10 +33,31 @@ function addColorChanger()
 {
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
+        square.removeEventListener('mouseover', colorSquare);
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = "grey";
+            colorSquare(square);
         });
     });
+}
+
+function colorSquare(squareToColor)
+{
+    let rgbColor = "#"+(switchRGB()).toString(16)+(switchRGB()).toString(16)+(switchRGB()).toString(16); 
+    squareToColor.style.backgroundColor = rgbColor;
+}
+
+function switchRGB()
+{
+    if(isRGB)
+    {
+        let randomrgb = Math.floor(Math.random() * 255);
+        return randomrgb;
+    }
+    else 
+    {
+        //Value for Grey
+        return 128;
+    }
 }
 
 function resetGrid()
@@ -45,8 +67,10 @@ function resetGrid()
     {
         container.removeChild(container.firstChild);
     }
-   
+    container.style.border = "white solid";
 }
+
+let isRGB = true;
 
 const buttonreset = document.querySelector("#btnreset");
 buttonreset.addEventListener('click', () => {
@@ -56,4 +80,10 @@ buttonreset.addEventListener('click', () => {
 const buttoncreate = document.querySelector("#btncreate");
 buttoncreate.addEventListener('click', () => {
     createGrid();
+});
+
+const buttonrgb = document.querySelector("#btnrgb");
+buttonrgb.addEventListener("click", () => {
+    isRGB = !isRGB;
+    addColorChanger();
 });
